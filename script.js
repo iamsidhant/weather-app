@@ -19,6 +19,15 @@ async function getWeatherData(cityValue){
         if (!response.ok) {
             throw new Error("Network reponse was not ok");
         }
+
+        const data = await response.json();
+
+        const details = [];
+
+        weatherDataEl.querySelector(".icon").innerHTML = ``;
+        weatherDataEl.querySelector(".temperature").textContent = ``;
+        weatherDataEl.querySelector(".description") = description;
+        weatherDataEl.querySelector(".details").innerHTML = details;
     } catch (error) {
         weatherDataEl.querySelector(".icon").innerHTML = "";
         weatherDataEl.querySelector(".temperature").textContent = "";
